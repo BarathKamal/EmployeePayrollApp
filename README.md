@@ -20,3 +20,6 @@ Introduce DTO and Model classes with employee name and salary fields to transfer
 
 #### Use Case 2: Introduce Services Layer
 Introduce a Service layer to manage employee data and implement dependency injection between the Controller and Service.
+
+#### Use Case 3: Store Employee Payroll Data
+Enable the Service layer to store, retrieve, update, and delete employee payroll data using an in-memory List.
