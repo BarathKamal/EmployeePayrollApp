@@ -8,7 +8,7 @@ It uses Spring Data JPA and MySQL for database connectivity and persistent stora
 ### Section 1: Employee Payroll App Setup
 
 #### Use Case 1: Create Employee Payroll Spring Project
-Create a Spring Boot project to handle REST requests from the Employee Payroll UI and test APIs using cURL.
+Create a Spring Boot project to handle REST requests and test APIs
 
 #### Use Case 2: Create REST Controller
 Create a REST Controller to demonstrate HTTP methods and establish REST API connectivity with MySQL.
