@@ -17,3 +17,6 @@ Create a REST Controller to demonstrate HTTP methods and establish REST API conn
 
 #### Use Case 1: Introduce DTO and Model
 Introduce DTO and Model classes with employee name and salary fields to transfer and manage employee data.
+
+#### Use Case 2: Introduce Services Layer
+Introduce a Service layer to manage employee data and implement dependency injection between the Controller and Service.
