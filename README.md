@@ -23,3 +23,8 @@ Introduce a Service layer to manage employee data and implement dependency injec
 
 #### Use Case 3: Store Employee Payroll Data
 Enable the Service layer to store, retrieve, update, and delete employee payroll data using an in-memory List.
+
+### Section 3: Application Settings
+
+#### Use Case 1: Use Lombok Library in DTO
+Integrate Lombok to automatically generate getters and setters for DTO classes.
