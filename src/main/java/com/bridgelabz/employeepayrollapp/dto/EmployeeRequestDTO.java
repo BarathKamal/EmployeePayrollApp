@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 // Employee request dto
+
+// sec3 - uc1: use lombok library in dto
 @Getter
 @Setter
 public class EmployeeRequestDTO {

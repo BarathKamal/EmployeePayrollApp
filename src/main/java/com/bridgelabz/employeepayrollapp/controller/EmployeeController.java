@@ -7,6 +7,7 @@ import com.bridgelabz.employeepayrollapp.mapper.EmployeeMapper;
 import com.bridgelabz.employeepayrollapp.service.EmployeeService;
 
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import static java.util.stream.Collectors.toList;
 
 // sec2 - uc1: introduce dto and model
 // sec2 - uc3: ability for the services layer to store data
+@Slf4j // sec3 - uc2: use lombok library for logging
 @RestController
 @RequestMapping("/employeepayrollservice")
 public class EmployeeController {
@@ -33,6 +35,7 @@ public class EmployeeController {
     // GET: Retrieve all employees
     @GetMapping("/")
     public ResponseEntity<List<EmployeeResponseDTO>> getAllEmployees() {
+        log.info("Received request to fetch all employees");
 
         List<Employee> employees = employeeService.getAllEmployees();
 
@@ -50,6 +53,8 @@ public class EmployeeController {
     // GET: Retrieve employee by id
     @GetMapping("/get/{id}")
     public ResponseEntity<EmployeeResponseDTO> getEmployeeById(@PathVariable int id) {
+        log.info("Received request to fetch employee with ID: " + id);
+
         return employeeService.getEmployee(id)
                 .map(employee -> mapper.toEmployeeResponseDTO(employee))
                 .map(ResponseEntity::ok)
@@ -61,6 +66,7 @@ public class EmployeeController {
     @PostMapping("/create")
     public ResponseEntity<EmployeeResponseDTO> createEmployee(
             @RequestBody @Valid EmployeeRequestDTO employeeRequestDTO) {
+        log.info("Received request to create employee");
 
         Employee employee = mapper.toEmployee(employeeRequestDTO);
         EmployeeResponseDTO employeeResponseDTO = mapper.toEmployeeResponseDTO(employeeService.addEmployee(employee));
@@ -75,6 +81,8 @@ public class EmployeeController {
     public ResponseEntity<EmployeeResponseDTO> updateEmployee(
             @PathVariable int id,
             @RequestBody @Valid EmployeeRequestDTO employeeRequestDTO) {
+        log.info("Received request to update employee with ID: {}", id);
+
         Employee employee = mapper.toEmployee(employeeRequestDTO);
         EmployeeResponseDTO employeeResponseDTO = mapper.toEmployeeResponseDTO(employeeService.updateEmployee(id, employee));
 
@@ -85,6 +93,8 @@ public class EmployeeController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteEmployee(
             @PathVariable int id) {
+        log.info("Received request to delete employee with ID: {}", id);
+
         employeeService.deleteEmployee(id);
 
         return ResponseEntity.noContent().build(); // 204

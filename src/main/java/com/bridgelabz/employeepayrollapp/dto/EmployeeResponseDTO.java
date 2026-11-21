@@ -5,6 +5,7 @@ package com.bridgelabz.employeepayrollapp.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+// sec3 - uc2: use lombok library to dto
 // Employee response dto
 @Getter
 @Setter
