@@ -28,3 +28,6 @@ Enable the Service layer to store, retrieve, update, and delete employee payroll
 
 #### Use Case 1: Use Lombok Library in DTO
 Integrate Lombok to automatically generate getters and setters for DTO classes.
+
+#### Use Case 2: Use Lombok for Logging
+Integrate Lombok's @Slf4j annotation to enable logging within application classes.
