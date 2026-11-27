@@ -31,3 +31,6 @@ Integrate Lombok to automatically generate getters and setters for DTO classes.
 
 #### Use Case 2: Use Lombok for Logging
 Integrate Lombok's @Slf4j annotation to enable logging within application classes.
+
+#### Use Case 3: Configure Logging Profiles
+Configure logging levels, output destinations, and patterns separately for development, staging, and production environments.
